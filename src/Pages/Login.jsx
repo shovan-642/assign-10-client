@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import app from "../firebase/firebase.config";
-import { getAuth } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useLocation, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
 
@@ -12,8 +13,10 @@ const Login = () => {
 
   const {login, setUser}=useContext(AuthContext)
 
+  const emailRef = useRef()
+
   const [error, setError]=useState({})
-  const [showpassword, setShowPassword]= useState(false)
+  const [showPassword, setShowPassword]= useState(false)
 
   const navigate = useNavigate()
 
@@ -34,20 +37,56 @@ const Login = () => {
         })
     }
 
+    const handleForgetPassword = () =>{
+      const email = emailRef.current.value
+      if(!email){
+        alert('please provide an email address')
+      }
+      else{
+        sendPasswordResetEmail(auth, email)
+        .then(()=>{
+          alert('password reset email send, Please check your email')
+        })
+      }
+    }
+
 
   return (
     <div>
       <h1>Login</h1>
       <form onSubmit={handleLogin} className="fieldset">
       <label className="fieldset-label">Email</label>
-      <input name="email" type="email" className="input" placeholder="Email" />
+      <input ref={emailRef} name="email" type="email" className="input" placeholder="Email" />
+      <div className="relative">
       <label className="fieldset-label">Password</label>
-      <input name="password" type="password" className="input" placeholder="Password" />
-      <div>
+      <input name="password" type={showPassword?"text":"password"} className="input" placeholder="Password" />
+      <button type="button" onClick={()=>setShowPassword(!showPassword)} className="btn btn-xs absolute right-6 top-7">
+        {
+          showPassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
+        }
+      </button>
+      </div>
+      <div onClick={handleForgetPassword}>
         <a className="link link-hover">Forgot password?</a>
       </div>
       <button className="btn btn-neutral mt-4">Login</button>
       </form> 
+
+      <label className=''>
+            Don't have an Account? 
+            <span><Link to={"/auth/register"}>Register</Link></span>
+        </label>
+
+      <div className="text-red-600">
+        {
+          error.login && (
+            <div>
+              {error.login}
+            </div>
+          )
+        }
+
+      </div>
     </div>
   );
 };
