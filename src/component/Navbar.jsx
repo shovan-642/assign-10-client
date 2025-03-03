@@ -10,6 +10,7 @@ const Navbar = () => {
       <li><NavLink to={"/"}>Home</NavLink></li>
       <li><NavLink to={"/auth/profile"}>My Profile</NavLink></li>
       <li><NavLink to={"/auth/update"}>Update Profile</NavLink></li>
+      <li><NavLink to={"addmovie"}>Add Movie</NavLink></li>
     </>
 
 
