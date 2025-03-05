@@ -1,0 +1,27 @@
+import React, { useContext, useState } from 'react';
+import { useLoaderData } from 'react-router';
+import { AuthContext } from '../Provider/AuthProvider';
+import FavoriteCard from '../component/FavoriteCard';
+
+const MyFavourtieMovie = () => {
+
+    const {user} = useContext(AuthContext)
+
+    const myFavoriteMovies = useLoaderData()
+
+    const [movie, setMovie]=useState(myFavoriteMovies)
+    
+
+
+    return (
+        <div>
+            <div className='grid grid-cols-3 gap-4'>
+            {
+                movie.map((mov,idx)=><FavoriteCard key={idx} mov={mov} movie={movie} setMovie={setMovie}></FavoriteCard>)
+            }
+            </div>
+        </div>
+    );
+};
+
+export default MyFavourtieMovie;

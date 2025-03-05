@@ -5,7 +5,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 
 const MovieDetails = () => {
 
-    const {movie, setMovie, user}=useContext(AuthContext)
+    const {user}=useContext(AuthContext)
 
       const user_email = user?.email
 
@@ -43,8 +43,8 @@ const MovieDetails = () => {
                             text: "Your Movie has been deleted.",
                             icon: "success"
                           });
-                          const remaining = movie.filter(mov=>mov._id!== _id)
-                          setMovie(remaining)
+                        //   const remaining = movie.filter(mov=>mov._id!== _id)
+                        //   setMovie(remaining)
                     }
                   })
                 }

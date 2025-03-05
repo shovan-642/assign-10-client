@@ -11,6 +11,7 @@ import UpdateMovie from '../Pages/UpdateMovie';
 import Home from '../Pages/Home';
 import AllMovies from '../Pages/AllMovies';
 import MovieDetails from '../Pages/MovieDetails';
+import MyFavourtieMovie from '../Pages/MyFavourtieMovie';
 
 const router = createBrowserRouter([
     {
@@ -25,16 +26,16 @@ const router = createBrowserRouter([
 
             },
             {
-                path: "allmovies",
+                path: "/allmovies",
                 element: <AllMovies></AllMovies>,
                 loader: () => fetch("http://localhost:5000/movies")
             },
             {
-                path: "addmovie",
+                path: "/addmovie",
                 element: <AddMovies></AddMovies>
             },
             {
-                path: "updatemovie/:id",
+                path: "/updatemovie/:id",
                 element: <UpdateMovie></UpdateMovie>,
                 loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
             },
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
                 element: <MovieDetails></MovieDetails>, 
                 loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`),
             },
+            {
+                path: "/myFavoriteMovies",
+                element: <MyFavourtieMovie></MyFavourtieMovie>,
+                loader: ()=>fetch("http://localhost:5000/favoriteMovies")
+            }
 
         ]
         

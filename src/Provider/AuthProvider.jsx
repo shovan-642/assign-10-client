@@ -9,6 +9,7 @@ const googleProvider = new GoogleAuthProvider()
 
 
 const AuthProvider = ({children}) => {
+    
 
     const auth = getAuth(app)
 

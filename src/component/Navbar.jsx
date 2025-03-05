@@ -12,6 +12,7 @@ const Navbar = () => {
       <li><NavLink to={"/auth/update"}>Update Profile</NavLink></li>
       <li><NavLink to={"/allmovies"}>ALL Movies</NavLink></li>
       <li><NavLink to={"/addmovie"}>Add Movie</NavLink></li>
+      <li><NavLink to={"/myFavoriteMovies"}>My Favorite Movie</NavLink></li>
     </>
 
 
