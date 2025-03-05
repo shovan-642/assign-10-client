@@ -6,7 +6,7 @@ const AddMovies = () => {
 
   
   const {user} = useContext(AuthContext)
-  const user_email = user.email
+  const user_email = user?.email
 
  const handleAddMovie =e=>{
     e.preventDefault()
@@ -40,7 +40,9 @@ const AddMovies = () => {
                 icon: 'success',
                 confirmButtonText: 'Cool'
               })
+              form.reset()
         }
+        
     })
 
  }

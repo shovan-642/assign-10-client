@@ -9,6 +9,7 @@ const Card = ({singleMovie}) => {
             <div className="card bg-base-100 w-96 shadow-sm">
   <figure>
     <img
+    className='h-80 w-50'
       src={movie_poster}
       alt="Shoes" />
   </figure>
