@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+
+import Footer from '../component/Footer';
 import Navbar from '../component/Navbar';
-import FeaturedMovies from '../component/FeaturedMovies';
-import { useLoaderData } from 'react-router';
+import { Outlet } from 'react-router';
 
 
 const HomeLayout = () => {
 
-    const movieData = useLoaderData()
+    
 
-    const [movie, setMovie]=useState(movieData)
 
     return (
         <div>
             <Navbar></Navbar>
-            <FeaturedMovies movieData={movieData}></FeaturedMovies>
+            <Outlet></Outlet>
+            
+            <Footer></Footer>
             
         </div>
     );

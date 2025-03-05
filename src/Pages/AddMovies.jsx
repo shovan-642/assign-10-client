@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AddMovies = () => {
+
+  
+  const {user} = useContext(AuthContext)
+  const user_email = user.email
 
  const handleAddMovie =e=>{
     e.preventDefault()
@@ -14,7 +19,7 @@ const AddMovies = () => {
     const rating = form.rating.value
     const summary = form.summary.value
 
-    const movieData = {movie_poster, movie_title, genre, duration, release_year, rating, summary}
+    const movieData = {movie_poster, movie_title, genre, duration, release_year, rating, summary, user_email}
     console.log(movieData)
 
     fetch('http://localhost:5000/movies', {

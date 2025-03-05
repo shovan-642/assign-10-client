@@ -8,12 +8,43 @@ import MyProfile from '../Pages/MyProfile';
 import UpdateProfile from '../Pages/updateProfile';
 import AddMovies from '../Pages/AddMovies';
 import UpdateMovie from '../Pages/UpdateMovie';
+import Home from '../Pages/Home';
+import AllMovies from '../Pages/AllMovies';
+import MovieDetails from '../Pages/MovieDetails';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayout></HomeLayout>,
-        loader: () => fetch("http://localhost:5000/movies")
+        
+        children: [
+            {
+                path: "/",
+                element: <Home></Home>,
+                loader: () => fetch("http://localhost:5000/movies"),
+
+            },
+            {
+                path: "allmovies",
+                element: <AllMovies></AllMovies>,
+                loader: () => fetch("http://localhost:5000/movies")
+            },
+            {
+                path: "addmovie",
+                element: <AddMovies></AddMovies>
+            },
+            {
+                path: "updatemovie/:id",
+                element: <UpdateMovie></UpdateMovie>,
+                loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+            },
+            {
+                path: "/movieDetails/:id",
+                element: <MovieDetails></MovieDetails>
+            },
+
+        ]
+        
     },
     {
         path: "auth",
@@ -37,15 +68,7 @@ const router = createBrowserRouter([
             },
         ]
     },
-    {
-        path: "addmovie",
-        element: <AddMovies></AddMovies>
-    },
-    {
-        path: "updatemovie/:id",
-        element: <UpdateMovie></UpdateMovie>,
-        loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
-    },
+
 ])
 
 export default router;
