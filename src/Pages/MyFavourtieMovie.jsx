@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import FavoriteCard from '../component/FavoriteCard';
@@ -7,9 +7,22 @@ const MyFavourtieMovie = () => {
 
     const {user} = useContext(AuthContext)
 
-    const myFavoriteMovies = useLoaderData()
+    const userEmail = user?.email
 
+    const myFavoriteMovies = useLoaderData()
     const [movie, setMovie]=useState(myFavoriteMovies)
+
+    useEffect(()=>{
+        const filteredUserFav = myFavoriteMovies.filter(favMov => favMov.user_email === userEmail)
+        setMovie(filteredUserFav)
+    },[myFavoriteMovies, userEmail])
+
+    
+    
+
+
+
+    
     
 
 
