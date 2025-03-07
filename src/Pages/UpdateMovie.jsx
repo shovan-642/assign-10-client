@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 const UpdateMovie = () => {
 
     const movie = useLoaderData()
+      console.log(movie)
 
      const {_id, movie_poster, movie_title, genre, duration, release_year, rating, summary} = movie
 
@@ -13,7 +14,7 @@ const UpdateMovie = () => {
         const form = e.target
         const movie_poster = form.movie_poster.value
         const movie_title = form.movie_title.value
-        const genre = form.genre.value
+        const genre = [form.genre.value]
         const duration = form.duration.value
         const release_year = form.release_year.value
         const rating = form.rating.value
@@ -71,13 +72,16 @@ const UpdateMovie = () => {
         </div>
         <div>
           <label className="">Genre</label>
-          <input
-            name="genre"
-            defaultValue={genre}
-            type="text"
-            placeholder="neutral"
-            className="input input-neutral"
-          />
+          <select defaultValue="genre[0]" name="genre" className="select">
+            <option disabled={true}>Pick a Genre</option>
+            <option>Animation</option>
+            <option>Action</option>
+            <option>Science Fiction</option>
+            <option>Fantasy</option>
+            <option>Superhero</option>
+            <option>Horror</option>
+            <option>Comedy</option>
+          </select>
         </div>
         <div>
           <label className="">Duration</label>

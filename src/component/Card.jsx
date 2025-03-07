@@ -15,6 +15,7 @@ const Card = ({singleMovie}) => {
   </figure>
   <div className="card-body">
     <h2 className="card-title">{movie_title}</h2>
+    <h3>Genre: {genre[0]}</h3>
     <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
     <div className="card-actions justify-end">
       <Link to={`/movieDetails/${_id}`}><button className="btn btn-primary">View details</button></Link>

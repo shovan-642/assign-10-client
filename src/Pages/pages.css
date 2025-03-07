@@ -1,0 +1,9 @@
+.rating-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.rating-container svg{
+    display: inline-block;
+    margin-right: 5px;
+}
