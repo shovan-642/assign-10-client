@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Rating } from "react-simple-star-rating";
 import "./pages.css";
+import { toast, ToastContainer } from "react-toastify";
 
 const AddMovies = () => {
   const [ratings, setRating] = useState(0);
@@ -30,50 +31,37 @@ const AddMovies = () => {
       /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/;
 
     if (!urlCheck.test(movie_poster)) {
-      Swal.fire({
-        title: "Error!",
-        text: "Please insert valid image URL",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      toast.error("Please enter valid URL address")
       return;
     }
 
     const movie_title = form.movie_title.value;
     if (movie_title.length < 2) {
-      Swal.fire({
-        title: "Error!",
-        text: "Please insert atleast 2 character",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
-      return;
+      toast.error("Please insert title atleast 2 character")
+      return
     }
     const genre = [form.genre.value];
     console.log(genre);
     const duration = form.duration.value;
     if (duration <= 60) {
-      Swal.fire({
-        title: "Error!",
-        text: "Please insert value greater than 60 (min)",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      toast.error("Please insert duration value greater than 60 (min)")
+
       return;
     }
     const release_year = form.release_year.value;
     const rating = ratings;
     if(rating<=0){
-      Swal.fire({
-        title: "Error!",
-        text: "Please give rating star of this movie",
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      toast.error("Please give rating star of this movie")
+
       return
 
     }
     const summary = form.summary.value;
+    if(summary.length<10){
+      toast.error("Please write summary atleast 10 character")
+      return
+        
+    }
 
     const movieData = {
       movie_poster,
@@ -118,7 +106,7 @@ const AddMovies = () => {
           <input
             name="movie_poster"
             type="text"
-            placeholder="neutral"
+            placeholder="Movie image URL"
             className="input input-neutral"
             required
           />
@@ -128,7 +116,7 @@ const AddMovies = () => {
           <input
             name="movie_title"
             type="text"
-            placeholder="neutral"
+            placeholder="Movie name"
             className="input input-neutral"
             required
           />
@@ -156,7 +144,7 @@ const AddMovies = () => {
           <input
             name="duration"
             type="number"
-            placeholder="neutral"
+            placeholder="Movie length"
             className="input input-neutral"
             required
           />
@@ -209,16 +197,18 @@ const AddMovies = () => {
         </div>
         <div>
           <label className="">Summary</label>
-          <input
+          <textarea
             name="summary"
             type="text"
-            placeholder="neutral"
+            placeholder="Movie Summary"
             className="input input-neutral"
             required
-          />
+          ></textarea>
+          
         </div>
         <button className="btn btn-ghost">Add Movie</button>
       </form>
+      <ToastContainer />
     </div>
   );
 };
