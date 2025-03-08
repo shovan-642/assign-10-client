@@ -75,7 +75,7 @@ const movie_poster = form.movie_poster.value;
     
         const updatedMovieData = {movie_poster, movie_title, genre, duration, release_year, rating, summary}
 
-           fetch(`http://localhost:5000/movies/${_id}`, {
+           fetch(`https://assign-10-server-phi.vercel.app/movies/${_id}`, {
                 method: "PUT",
                 headers: {
                     'content-type': 'application/json'

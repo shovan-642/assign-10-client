@@ -30,7 +30,7 @@ const MovieDetails = () => {
               }).then((result) => {
                 if (result.isConfirmed) {
     
-                  fetch(`http://localhost:5000/movies/${_id}`,{
+                  fetch(`https://assign-10-server-phi.vercel.app/movies/${_id}`,{
                     method: "DELETE",
     
                   })
@@ -68,7 +68,7 @@ const MovieDetails = () => {
 
             console.log(FavoriteMovieData)
 
-                fetch('http://localhost:5000/favoriteMovies', {
+                fetch('https://assign-10-server-phi.vercel.app/favoriteMovies', {
                     method: "POST",
                     headers: {
                         'content-type': 'application/json'

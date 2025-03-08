@@ -75,7 +75,7 @@ const AddMovies = () => {
     };
     console.log(movieData);
 
-    fetch("http://localhost:5000/movies", {
+    fetch("https://assign-10-server-phi.vercel.app/movies", {
       method: "POST",
       headers: {
         "content-type": "application/json",

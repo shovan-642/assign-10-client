@@ -22,13 +22,13 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch("http://localhost:5000/top-rated-movie"),
+                loader: () => fetch("https://assign-10-server-phi.vercel.app/top-rated-movie"),
 
             },
             {
                 path: "/allmovies",
                 element: <AllMovies></AllMovies>,
-                loader: () => fetch("http://localhost:5000/movies")
+                loader: () => fetch("https://assign-10-server-phi.vercel.app/movies")
             },
             {
                 path: "/addmovie",
@@ -37,17 +37,17 @@ const router = createBrowserRouter([
             {
                 path: "/updatemovie/:id",
                 element: <UpdateMovie></UpdateMovie>,
-                loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`)
+                loader: ({params}) => fetch(`https://assign-10-server-phi.vercel.app/movies/${params.id}`)
             },
             {
                 path: "/movieDetails/:id",
                 element: <MovieDetails></MovieDetails>, 
-                loader: ({params}) => fetch(`http://localhost:5000/movies/${params.id}`),
+                loader: ({params}) => fetch(`https://assign-10-server-phi.vercel.app/movies/${params.id}`),
             },
             {
                 path: "/myFavoriteMovies",
                 element: <MyFavourtieMovie></MyFavourtieMovie>,
-                loader: ()=>fetch("http://localhost:5000/favoriteMovies")
+                loader: ()=>fetch("https://assign-10-server-phi.vercel.app/favoriteMovies")
             }
 
         ]
