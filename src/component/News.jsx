@@ -4,7 +4,7 @@ const News = () => {
     return (
         <div className='w-9/12 mx-auto mb-10'>
             <h1 className='py-3 font-bold text-2xl'>Latest Movie News</h1>
-            <div className='grid grid-cols-4 gap-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3'>
                 <div className="single_news">
                     <img className='w-80 h-40' src="https://i.ibb.co.com/v6jdvzGS/cap3-0.jpg" alt="" />
                      <h1 className='text-gray-500 uppercase font-bold'>Movies</h1>

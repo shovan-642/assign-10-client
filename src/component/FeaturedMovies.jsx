@@ -7,7 +7,7 @@ const FeaturedMovies = ({movieData}) => {
 
     return (
         <div className='w-9/12 mx-auto my-10'>
-            <div className='grid grid-cols-3 gap-3'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {movieData.map((singleMovie,idx) => <FeaturedCard key={idx} singleMovie={singleMovie} ></FeaturedCard>)}
             </div>
         </div>
