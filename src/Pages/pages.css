@@ -7,3 +7,7 @@
     display: inline-block;
     margin-right: 5px;
 }
+
+input, select, textarea{
+    background-color: #202020 ;
+}

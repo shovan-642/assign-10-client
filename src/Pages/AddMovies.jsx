@@ -99,8 +99,11 @@ const AddMovies = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleAddMovie}>
+    <div className="w-full mx-auto bg-black text-white">
+      <h1 className="text-center text-2xl py-5">Add Movie</h1><br />
+      <div className="flex justify-center pb-10">
+        
+      <form className="flex flex-col  gap-5" onSubmit={handleAddMovie}>
         <div>
           <label className="">Movie Poster</label>
           <input
@@ -180,7 +183,7 @@ const AddMovies = () => {
             <div className="rating-container">
               <div className="flex gap-5 items-center">
                 <div className="App">
-                  <div className="rating-container">
+                  <div className="rating-container flex items-center gap-5">
                     <Rating
                       onClick={handleRating}
                       onPointerEnter={onPointerEnter}
@@ -206,8 +209,9 @@ const AddMovies = () => {
           ></textarea>
           
         </div>
-        <button className="btn btn-ghost">Add Movie</button>
+        <button className="btn btn-ghost bg-red-600">Add Movie</button>
       </form>
+      </div>
       <ToastContainer />
     </div>
   );
