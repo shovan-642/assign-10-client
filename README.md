@@ -1,12 +1,11 @@
-# React + Vite
+# Project Name: CINEFLIX
+## Live Link [https://assignment-10-ff4a3.web.app/](https://assignment-10-ff4a3.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Key Features
 
-Currently, two official plugins are available:
+1. **Stored data to MongoDB:** all movies data stored to MongoDB, you can add movie to give all req info.  
+3. **View Details:** clicking Explore Now button you see Movie details. 
+3. **Edit, Delete Movie:** You can edit and delete movie click a button, it also deleted from DB. 
+2. **User Authentication:** User can register, Login, LogOut & update his profile. 
+3. **Add to favorite:** You can added your favorite movie, and here you can delete also. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

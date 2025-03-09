@@ -11,7 +11,7 @@ const AllMovies = () => {
 
     
     return (
-        <div className='w-11/12 mx-auto my-10'>
+        <div className='w-11/12 mx-auto py-20'>
 
             <div className='grid grid-cols-3 gap-5'>
             {

@@ -4,7 +4,6 @@ import { Link } from "react-router";
 
 const MyProfile = () => {
   const { user } = useContext(AuthContext);
-  console.log(user)
   const name = user?.displayName
     ? user.displayName.toUpperCase()
     : "No Username";

@@ -20,7 +20,7 @@ const MyFavourtieMovie = () => {
     
     return (
         <div>
-            <div className='grid grid-cols-3 gap-4'>
+            <div className='grid grid-cols-3 gap-4 py-20'>
             {
                 movie.map((mov,idx)=><FavoriteCard key={idx} mov={mov} movie={movie} setMovie={setMovie}></FavoriteCard>)
             }
