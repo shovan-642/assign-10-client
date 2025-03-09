@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 
 const UpdateMovie = () => {
   const movie = useLoaderData();
-  console.log(movie);
 
   const {
     _id,

@@ -32,11 +32,6 @@ const AllMovies = () => {
             return <Loader></Loader>
         }
 
-        
-        console.log(search)
-
-
-
     
     return (
         <div className='w-11/12 mx-auto pb-20'>

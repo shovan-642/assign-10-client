@@ -64,7 +64,7 @@ const FavoriteCard = ({mov, movie, setMovie}) => {
     <h3 className='text-gray-500 text-base'>Release: {release_year}</h3>
     <h3 className='text-gray-500 text-base'>Rating: {rating} </h3>
     <div className="card-actions justify-end">
-    <button onClick={()=>handleDelete(_id)} className='btn btn-accent' type="button">Delete</button>
+    <button onClick={()=>handleDelete(_id)} className='btn btn-ghost text-white bg-red-600' type="button">Delete Favorite</button>
     </div>
   </div>
 </div>

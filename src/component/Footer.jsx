@@ -3,7 +3,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaWhatsapp,
-  FaYoutube,
   FaYoutubeSquare,
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
@@ -15,12 +14,13 @@ const Footer = () => {
       <div className="w-11/12 mx-auto">
         <footer className="footer text-base-content p-10 grid md:grid-cols-3">
           <aside>
-            <Link to={"/"} className="text-2xl font-bold text-white">
-            <a className="text-white bg-red-600 font-bold text-2xl py-2 px-2">CINEFLIX</a>
+            <Link to={"/"} className="text-white bg-red-600 font-bold text-2xl py-2 px-2">
+            CINEFLIX
             </Link>
           </aside>
           <ul className="text-white">
             <h6 className="footer-title">Menu</h6>
+            
             <li>
               <Link to={"/"}>Home</Link>
             </li>
@@ -39,6 +39,7 @@ const Footer = () => {
             <li>
               <Link to={"/myFavoriteMovies"}>My Favorite Movie</Link>
             </li>
+            <li><Link to={"/price"}>Price & Plan</Link></li>
           </ul>
           <nav>
             <h6 className="footer-title text-white">Contact Us</h6>

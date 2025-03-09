@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useLoaderData } from 'react-router';
+import { Link, useLoaderData, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
 
@@ -12,6 +12,7 @@ const MovieDetails = () => {
     const movieDetailsData = useLoaderData()
     const {_id, movie_poster, movie_title, genre, duration, release_year, rating, summary}=movieDetailsData
 
+    const navigate = useNavigate()
 
 
 
@@ -38,11 +39,13 @@ const MovieDetails = () => {
                   .then (data => {
                     console.log(data)
                     if(data.deletedCount>0){
+
                         Swal.fire({
                             title: "Deleted!",
                             text: "Your Movie has been deleted.",
                             icon: "success"
                           });
+                          navigate("/allmovies")
                         //   const remaining = movie.filter(mov=>mov._id!== _id)
                         //   setMovie(remaining)
                     }
@@ -66,7 +69,7 @@ const MovieDetails = () => {
         
             const FavoriteMovieData = {movie_poster, movie_title, genre, duration, release_year, rating, summary, user_email}
 
-            console.log(FavoriteMovieData)
+
 
                 fetch('https://assign-10-server-phi.vercel.app/favoriteMovies', {
                     method: "POST",
