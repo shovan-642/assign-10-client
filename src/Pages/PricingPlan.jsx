@@ -7,7 +7,7 @@ const PricingPlan = () => {
                 <h1 className='uppercase text-4xl font-bold text-center py-10'>
                     Choose your plan
                 </h1>
-            <div className="card-container grid grid-cols-3 gap-5">
+            <div className="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div className="card bg-[#1E2029] shadow-sm">
   <div className="card-body">
 
