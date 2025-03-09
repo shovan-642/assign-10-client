@@ -5,17 +5,18 @@ import FavoriteCard from '../component/FavoriteCard';
 
 const MyFavourtieMovie = () => {
 
-    const {user} = useContext(AuthContext)
+    const {user, setLoading} = useContext(AuthContext)
 
     const userEmail = user?.email
 
     const myFavoriteMovies = useLoaderData()
     const [movie, setMovie]=useState(myFavoriteMovies)
 
+
     useEffect(()=>{
         const filteredUserFav = myFavoriteMovies.filter(favMov => favMov.user_email === userEmail)
         setMovie(filteredUserFav)
-    },[myFavoriteMovies, userEmail])
+    },[myFavoriteMovies, userEmail,setLoading])
 
     
     return (

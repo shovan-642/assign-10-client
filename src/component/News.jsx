@@ -17,15 +17,16 @@ s" alt="" />
                      <p>Shop Marvel Must Haves: Captain America Collectibles</p>   
                 </div>
                 <div className="single_news">
-                    <img className='w-80 h-40' src="https://i.ibb.co.com/Ld64gPVF/marvel-must-haves-20250221-captain-america-brave-new-world-article-card-2.jpg" alt="" />
-                     <h1 className='text-gray-500 uppercase font-bold'>Gear</h1>
-                     <p>Shop Marvel Must Haves for 'Captain America: Brave New World'</p>   
-                </div>
-                <div className="single_news">
                     <img className='w-80 h-40' src="https://i.ibb.co.com/gZ5gny7J/skins-samwilson-bravenewworld-landscape-postrelease-02.jpg" alt="" />
                      <h1 className='text-gray-500 uppercase font-bold'>Games</h1>
                      <p>Unlock 'Brave New World' Costume in 'MARVEL Strike Force'</p>   
                 </div>
+                <div className="single_news">
+                    <img className='w-80 h-40' src="https://i.ibb.co.com/Ld64gPVF/marvel-must-haves-20250221-captain-america-brave-new-world-article-card-2.jpg" alt="" />
+                     <h1 className='text-gray-500 uppercase font-bold'>Gear</h1>
+                     <p>Shop Marvel Must Haves for 'Captain America: Brave New World'</p>   
+                </div>
+
 
             </div>
         </div>
