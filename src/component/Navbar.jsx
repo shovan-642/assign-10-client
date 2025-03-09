@@ -15,6 +15,7 @@ const Navbar = () => {
       <li><NavLink to={"/allmovies"}>ALL Movies</NavLink></li>
       <li><NavLink to={"/addmovie"}>Add Movie</NavLink></li>
       <li><NavLink to={"/myFavoriteMovies"}>My Favorite Movie</NavLink></li>
+      <li><NavLink to={"/price"}>Price & Plan</NavLink></li>
     </>
 
 

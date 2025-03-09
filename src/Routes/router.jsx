@@ -14,6 +14,7 @@ import MovieDetails from '../Pages/MovieDetails';
 import MyFavourtieMovie from '../Pages/MyFavourtieMovie';
 import PrivateRouter from './PrivateRouter';
 import Errorpage from '../Pages/Errorpage';
+import PricingPlan from '../Pages/PricingPlan';
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
                 path: "/myFavoriteMovies",
                 element: <PrivateRouter><MyFavourtieMovie></MyFavourtieMovie></PrivateRouter>,
                 loader: ()=>fetch("https://assign-10-server-phi.vercel.app/favoriteMovies")
+            },
+            {
+                path: "price",
+                element: <PricingPlan></PricingPlan>
             }
 
         ]
