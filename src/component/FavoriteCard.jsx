@@ -47,19 +47,22 @@ const FavoriteCard = ({mov, movie, setMovie}) => {
             }
 
     return (
-        <div>
+        <div className='w-11/12 mx-auto'>
             
             <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
-  <figure>
+            <div className="card bg-base-100 shadow-sm">
+            <figure>
     <img
-        className='h-80 w-60'
+    className='h-100 w-90 rounded-2xl py-3'
       src={movie_poster}
-      alt="Shoes" />
+      alt="movie poster" />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">{movie_title}</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <h2 className="card-title text-2xl uppercase">{movie_title}</h2>
+    <h3 className='text-gray-500 text-base'>Genre: {genre[0]}</h3>
+    <h3 className='text-gray-500 text-base'>Duration: {duration} min</h3>
+    <h3 className='text-gray-500 text-base'>Release: {release_year}</h3>
+    <h3 className='text-gray-500 text-base'>Rating: {rating} </h3>
     <div className="card-actions justify-end">
     <button onClick={()=>handleDelete(_id)} className='btn btn-accent' type="button">Delete</button>
     </div>

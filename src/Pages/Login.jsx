@@ -52,13 +52,15 @@ const Login = () => {
 
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin} className="fieldset">
-      <label className="fieldset-label">Email</label>
+    <div className=" bg-black  text-white">
+      <h1 className="text-center text-2xl pt-5">Login</h1>
+      <br />
+      <div className="flex justify-center">
+      <form onSubmit={handleLogin} className="fieldset ">
+      <label className="fieldset-label text-white">Email</label>
       <input ref={emailRef} name="email" type="email" className="input" placeholder="Email" />
       <div className="relative">
-      <label className="fieldset-label">Password</label>
+      <label className="fieldset-label text-white">Password</label>
       <input name="password" type={showPassword?"text":"password"} className="input" placeholder="Password" />
       <button type="button" onClick={()=>setShowPassword(!showPassword)} className="btn btn-xs absolute right-6 top-7">
         {
@@ -69,12 +71,14 @@ const Login = () => {
       <div onClick={handleForgetPassword}>
         <a className="link link-hover">Forgot password?</a>
       </div>
-      <button className="btn btn-neutral mt-4">Login</button>
+      <button className="btn btn-neutral bg-red-600 mt-4">Login</button>
       </form> 
+      </div>
 
+      <div className="text-center py-3">
       <label className=''>
             Don't have an Account? 
-            <span><Link to={"/auth/register"}>Register</Link></span>
+            <span><Link className="text-red-600 ml-3" to={"/auth/register"}>Register</Link></span>
         </label>
 
       <div className="text-red-600">
@@ -86,6 +90,7 @@ const Login = () => {
           )
         }
 
+      </div>
       </div>
     </div>
   );

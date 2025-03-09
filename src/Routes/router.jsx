@@ -13,6 +13,7 @@ import AllMovies from '../Pages/AllMovies';
 import MovieDetails from '../Pages/MovieDetails';
 import MyFavourtieMovie from '../Pages/MyFavourtieMovie';
 import PrivateRouter from './PrivateRouter';
+import Errorpage from '../Pages/Errorpage';
 
 const router = createBrowserRouter([
     {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
             },
         ]
     },
+    {
+        path: "*",
+        element: <Errorpage></Errorpage>
+    }
 
 ])
 

@@ -21,19 +21,23 @@ const UpdateProfile = () => {
       });
   };
   return (
-    <div>
+    <div className=" bg-black  text-white pb-10">
+      <h1 className="text-center text-2xl pt-5">Update Profile</h1>
+      <br />
+      <div className="flex justify-center">
       <form onSubmit={handleUpdateProfile} className="fieldset">
-        <label className="fieldset-label">Name</label>
+        <label className="fieldset-label text-white">Name</label>
         <input name="name" type="name" className="input" placeholder="Name" />
-        <label className="fieldset-label">Photo URL</label>
+        <label className="fieldset-label text-white">Photo URL</label>
         <input
           name="photo"
           type="photo"
           className="input"
           placeholder="Photo URL"
         />
-        <button className="btn btn-neutral mt-4">Update Profile</button>
+        <button className="btn btn-neutral mt-4 bg-red-600">Update Profile</button>
       </form>
+    </div>
     </div>
   );
 };
