@@ -11,9 +11,9 @@ const AllMovies = () => {
 
     
     return (
-        <div className='w-11/12 mx-auto'>
-            <h1>All movies section</h1>
-            <div className='grid grid-cols-3 gap-3'>
+        <div className='w-11/12 mx-auto my-10'>
+
+            <div className='grid grid-cols-3 gap-5'>
             {
                 allMovieData.map((singleMovie,idx) => <Card key={idx} singleMovie={singleMovie}></Card>)
             }

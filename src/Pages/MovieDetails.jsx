@@ -97,12 +97,31 @@ const MovieDetails = () => {
 
     return (
         <div>
-            <img src={movie_poster} alt="" />
-            <h1>{movie_title}</h1>
-
-            <Link to={`/updatemovie/${_id}`}><button className='btn btn-accent' type="button">Edit</button></Link> 
-            <button onClick={()=>handleDelete(_id)} className='btn btn-accent' type="button">Delete</button>
+<div className="hero bg-base-200 min-h-screen">
+  <div className="hero-content flex-col lg:flex-row-reverse">
+    <img
+      src={movie_poster}
+      className="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 className="text-5xl font-bold uppercase">{movie_title}</h1>
+      <h3 className='text-gray-500 text-base'>Genre: {genre[0]}</h3>
+    <h3 className='text-gray-500 text-base'>Duration: {duration} min</h3>
+    <h3 className='text-gray-500 text-base'>Release: {release_year}</h3>
+    <h3 className='text-gray-500 text-base'>Rating: {rating} </h3>
+      <p></p>
+      <p className="py-6">
+       Summary: {summary}
+      </p>
+      <div className=' flex gap-2'>
+      <Link to={`/updatemovie/${_id}`}><button className='btn btn-accent bg-amber-600' type="button">Edit</button></Link> 
+            <button onClick={()=>handleDelete(_id)} className='btn btn-error' type="button">Delete</button>
             <button onClick={()=>handleAddtoFavorite(movieDetailsData)} className='btn btn-accent' type="button">Add to Favorite</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
         </div>
     );
 };

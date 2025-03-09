@@ -12,6 +12,7 @@ import Home from '../Pages/Home';
 import AllMovies from '../Pages/AllMovies';
 import MovieDetails from '../Pages/MovieDetails';
 import MyFavourtieMovie from '../Pages/MyFavourtieMovie';
+import PrivateRouter from './PrivateRouter';
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addmovie",
-                element: <AddMovies></AddMovies>
+                element: <PrivateRouter><AddMovies></AddMovies></PrivateRouter>
             },
             {
                 path: "/updatemovie/:id",
@@ -41,12 +42,12 @@ const router = createBrowserRouter([
             },
             {
                 path: "/movieDetails/:id",
-                element: <MovieDetails></MovieDetails>, 
+                element: <PrivateRouter><MovieDetails></MovieDetails></PrivateRouter>, 
                 loader: ({params}) => fetch(`https://assign-10-server-phi.vercel.app/movies/${params.id}`),
             },
             {
                 path: "/myFavoriteMovies",
-                element: <MyFavourtieMovie></MyFavourtieMovie>,
+                element: <PrivateRouter><MyFavourtieMovie></MyFavourtieMovie></PrivateRouter>,
                 loader: ()=>fetch("https://assign-10-server-phi.vercel.app/favoriteMovies")
             }
 
@@ -67,11 +68,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/auth/profile",
-                element: <MyProfile></MyProfile>
+                element: <PrivateRouter><MyProfile></MyProfile></PrivateRouter>
             },
             {
                 path: "/auth/update",
-                element: <UpdateProfile></UpdateProfile>
+                element: <PrivateRouter><UpdateProfile></UpdateProfile></PrivateRouter>
             },
         ]
     },

@@ -6,19 +6,21 @@ const Card = ({singleMovie}) => {
     const {_id ,movie_poster, movie_title, genre, duration, release_year, rating, summary, user_email}  = singleMovie
     return (
         <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
+            <div className="card bg-base-100 shadow-sm rounded-2xl">
   <figure>
     <img
-    className='h-80 w-50'
+    className='h-100 w-90 rounded-2xl py-3'
       src={movie_poster}
-      alt="Shoes" />
+      alt="movie poster" />
   </figure>
   <div className="card-body">
-    <h2 className="card-title">{movie_title}</h2>
-    <h3>Genre: {genre[0]}</h3>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <h2 className="card-title text-2xl uppercase">{movie_title}</h2>
+    <h3 className='text-gray-500 text-base'>Genre: {genre[0]}</h3>
+    <h3 className='text-gray-500 text-base'>Duration: {duration} min</h3>
+    <h3 className='text-gray-500 text-base'>Release: {release_year}</h3>
+    <h3 className='text-gray-500 text-base'>Rating: {rating} </h3>
     <div className="card-actions justify-end">
-      <Link to={`/movieDetails/${_id}`}><button className="btn btn-primary">View details</button></Link>
+      <Link to={`/movieDetails/${_id}`}><button className="btn btn-primary bg-red-600 border-0">View details</button></Link>
     </div>
   </div>
 </div>
